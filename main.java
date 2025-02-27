@@ -1,6 +1,5 @@
 import java.util.Scanner;
 
-
 class Main {
     public static void main(String[] args) {
         // scanner object
@@ -16,7 +15,7 @@ class Main {
            System.out.print("Enter first number: ");
            double num1 = sinput.nextDouble();
            
-           System.out.print("Enter first number: ");
+           System.out.print("Enter second number: ");
            double num2 = sinput.nextDouble();
            
            double result = 0;
@@ -31,13 +30,16 @@ class Main {
                    result = num1 * num2;
                    break;
                case '/':
-                   if (num2 > 0) {
+                   if (num2 != 0) {
                        result = num1 / num2;
                    } else {
-                       System.out.println("Error: This kind of division is not allowed.");
+                       System.out.println("Error: Division by zero is not allowed.");
                        continue;
                    }
                    break;
+               default:
+                   System.out.println("Error: Invalid operation.");
+                   continue;
            }
            System.out.println("Result: " + result);
            System.out.print("Do you want to perform another calculation (Y/n): ");
